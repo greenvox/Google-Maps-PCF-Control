@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
   <control namespace="MCAConnect" constructor="GMapControl" version="0.0.1" display-name-key="Google Maps Control" description-key="Google Maps Control" control-type="standard">
-		<property name="controlValue" display-name-key="Address" description-key="controlValue_Desc_Key" of-type="SingleLine.Text" usage="bound" required="true" />
+		<property name="controlValue" display-name-key="Composite Address" description-key="Composite Address" of-type="SingleLine.Text" usage="input" required="true" />
 		<property name="mapsApiKey" display-name-key="Api Key" description-key="Google Maps Api Key" of-type="SingleLine.Text" usage="input" required="true" />
     <resources>
       <code path="index.ts" order="1"/>
