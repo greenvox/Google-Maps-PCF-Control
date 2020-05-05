@@ -1,5 +1,6 @@
 # Google Map PCF Control (GMapControl)
-Google Maps PCF Control for PowerApps and Dynamics CRM/365
+### Google Maps PCF Control for PowerApps and Dynamics CRM/365 
+Credit: Rebuilt from a [repo by Giles Ford](https://github.com/codecprojects/PCFMapControl)
 
 ### Implementation: 
 
