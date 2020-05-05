@@ -9,6 +9,13 @@ private _context : ComponentFramework.Context<IInputs>;
 // API Key used to activate and embed the maps automatically
 // NOTE: You can follow the documentation at https://developers.google.com/maps/documentation/embed/get-api-key to generate your own API Key
 private MAPS_API_KEY: string = "INSERT_GOOGLE_MAPS_API_KEY";
+private _addressString: string = "";
+private _street: string = "";
+private _city: string = "";
+private _state: string = "";
+private _zip: string = "";
+private _country: string = "";
+
 /**
  * Empty constructor.
  */
@@ -29,7 +36,13 @@ public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: (
 	this._context = context;
 	this._iFrameElement = document.createElement("iframe");
 	this._iFrameElement.setAttribute("class", "mapHiddenStyle");
-	this.renderMap(this.buildMapUrl(context.parameters.controlValue.formatted, context.parameters.mapsApiKey.raw!));
+	this._street = context.parameters.controlValue.formatted || "";
+	this._city = context.parameters.cityValue.formatted || "";
+	this._state = context.parameters.stateValue.formatted || "";
+	this._country = context.parameters.countryValue.formatted || "";
+	this._zip = context.parameters.zipValue.formatted || "";
+	this._addressString = this._street + this._city + this._state + this._zip + this._country;
+	this.renderMap(this.buildMapUrl(this._addressString, context.parameters.mapsApiKey.raw!));
 	container.appendChild(this._iFrameElement);
 }
 /**
@@ -70,7 +83,13 @@ public buildMapUrl(addressString :string|undefined, mapsApiKey :string|undefined
 public updateView(context: ComponentFramework.Context<IInputs>)
 {
 	this._context = context;
-	this.renderMap(this.buildMapUrl(context.parameters.controlValue.formatted, context.parameters.mapsApiKey.raw!));
+	this._street = context.parameters.controlValue.formatted || "";
+	this._city = context.parameters.cityValue.formatted || "";
+	this._state = context.parameters.stateValue.formatted || "";
+	this._country = context.parameters.countryValue.formatted || "";
+	this._zip = context.parameters.zipValue.formatted || "";
+	this._addressString = this._street + this._city + this._state + this._zip + this._country;
+	this.renderMap(this.buildMapUrl(this._addressString, context.parameters.mapsApiKey.raw!));
 }
 /** 
  * It is called by the framework prior to a control receiving new data. 

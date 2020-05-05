@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="MCAConnect" constructor="GMapControl" version="0.0.1" display-name-key="Google Maps Control" description-key="Google Maps Control" control-type="standard">
-		<property name="controlValue" display-name-key="Composite Address" description-key="Composite Address" of-type="SingleLine.Text" usage="input" required="true" />
-		<property name="mapsApiKey" display-name-key="Api Key" description-key="Google Maps Api Key" of-type="SingleLine.Text" usage="input" required="true" />
+  <control namespace="MCAConnect" constructor="GMapControl" version="0.0.1" display-name-key="Google Maps Control" description-key="Google Maps Control" control-type="standard">	
+    <property name="mapsApiKey" display-name-key="Api Key" description-key="Google Maps Api Key" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="controlValue" display-name-key="Street 1" description-key="Address: Street 1" of-type="SingleLine.Text" usage="bound" required="true" />
+		<property name="cityValue" display-name-key="City" description-key="Address: City" of-type="SingleLine.Text" usage="input" required="false" />
+		<property name="stateValue" display-name-key="State/Province" description-key="Address: State or Province" of-type="SingleLine.Text" usage="input" required="false" />
+		<property name="countryValue" display-name-key="Country/Region" description-key="Address: Country or Region" of-type="SingleLine.Text" usage="input" required="false" />
+		<property name="zipValue" display-name-key="Zip/Postal Code" description-key="Address: Zip or Postal Code" of-type="SingleLine.Text" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1"/>
       <css path="css/GMapControl.css" order="1" />
