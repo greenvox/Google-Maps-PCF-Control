@@ -14,7 +14,7 @@ This is what the PCF looks like in action:
 1. Add "Address1: Street 1" to the form, double click on the form and click Controls
 2. Select Google Maps Control from the list.
 
-![Implementation](docs/GoogleMapsSetup.png)
+![Implementation](docs/GMapsSetup.png)
 
 3. Input the Google Maps API Key, specifically the "Maps Embed API". You can sign up for one here: https://console.developers.google.com/google/maps-apis
 4. Select Web, Tablet, and Phone radio buttons next to the Google Maps Control.
